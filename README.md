@@ -27,11 +27,12 @@ Cette option utilise le `Dockerfile` et la configuration `nginx.conf` présents 
    
 3. **Construire l'image Docker du Frontend** :
 
-
-docker build -t react-voiture-frontend .
+      ```bash
+      docker build -t react-voiture-frontend .
 
 **Lancer le conteneur** :
-docker run -d -p 3000:80 --name frontend-app react-voiture-frontend
+        ```bash
+       docker run -d -p 3000:80 --name frontend-app react-voiture-frontend
 
 2. **Accéder à l'application** : Ouvrez votre navigateur et rendez-vous sur http://localhost:3000
 
@@ -39,8 +40,11 @@ docker run -d -p 3000:80 --name frontend-app react-voiture-frontend
 Si vous souhaitez modifier le code source ou lancer l'application sans Docker, utilisez l'environnement Node.js local.
 
 **Installer les dépendances (à ne faire que la première fois)** :
-npm install
+      ```bash
+      npm install
 **Démarrer le serveur de développement** :
-npm start
+
+   ```bash
+   npm start
 
 L'application s'ouvre automatiquement en mode développement sur http://localhost:3000. La page se recharge instantanément à chaque modification du code.
