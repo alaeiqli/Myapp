@@ -45,7 +45,7 @@ Si vous souhaitez modifier le code source ou lancer l'application sans Docker, u
            
 **Démarrer le serveur de développement** :
 
-    ```bash
+
     npm start
 
 **L'application s'ouvre automatiquement en mode développement sur http://localhost:3000. La page se recharge instantanément à chaque modification du code.**
