@@ -40,7 +40,7 @@ Cette option utilise le `Dockerfile` et la configuration `nginx.conf` présents 
 Si vous souhaitez modifier le code source ou lancer l'application sans Docker, utilisez l'environnement Node.js local.
 
 **Installer les dépendances (à ne faire que la première fois)** :
-        ```bash
+        
         npm install
            
 **Démarrer le serveur de développement** :
