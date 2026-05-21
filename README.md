@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# 💻 Management Carpooling Services - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce dépôt contient l'interface utilisateur (UI) de l'application de gestion de covoiturage. Il s'agit d'une Single Page Application (SPA) développée avec **React.js**, optimisée et servie par un serveur **Nginx** pour sa version conteneurisée.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ Architecture & Technologies
+* **Framework :** React.js (Bootstrappé avec Create React App)
+* **Serveur Web :** Nginx (Utilisé pour exposer l'application de production dans le conteneur)
+* **Conteneurisation :** Docker
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Guide d'Exécution de l'Application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Vous pouvez lancer l'interface utilisateur de deux manières différentes selon vos besoins (production conteneurisée ou développement local).
 
-### `npm test`
+### Option A : Déploiement avec Docker (Recommandé)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cette option utilise le `Dockerfile` et la configuration `nginx.conf` présents à la racine pour compiler l'application et la servir proprement.
 
-### `npm run build`
+1. **Prérequis** : Assurez-vous que Docker Desktop est actif et que le conteneur du backend (`backend-app`) tourne déjà sur le port `8081`.
+2. **Cloner le projet** :
+   ```bash
+   git clone [https://github.com/alaeiqli/Myapp.git](https://github.com/alaeiqli/Myapp.git)
+   cd Myapp
+   
+3. **Construire l'image Docker du Frontend** :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+docker build -t react-voiture-frontend .
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Lancer le conteneur** :
+docker run -d -p 3000:80 --name frontend-app react-voiture-frontend
 
-### `npm run eject`
+2. **Accéder à l'application** : Ouvrez votre navigateur et rendez-vous sur http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Option B :Environnement de Développement Local (Scripts npm)
+Si vous souhaitez modifier le code source ou lancer l'application sans Docker, utilisez l'environnement Node.js local.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Installer les dépendances (à ne faire que la première fois)** :
+npm install
+**Démarrer le serveur de développement** :
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+L'application s'ouvre automatiquement en mode développement sur http://localhost:3000. La page se recharge instantanément à chaque modification du code.
